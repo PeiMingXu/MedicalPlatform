@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xmut.mapper.Date_viewMapper">
+    <resultMap id="dateMap" type="java.util.Map">
+        <result property="user_name" column="user_name"  jdbcType="VARCHAR"></result>
+        <result property="dc_evaluate" column="dc_evaluate"  jdbcType="VARCHAR"></result>
+    </resultMap>
+    <select id="doctorHits" resultMap="dateMap">
+        select
+          user_name,
+          dc_evaluate
+        from
+            user
+        where
+          user_role='doctor'
+          and dc_evaluate >50
+    </select>
+
+    <resultMap id="date1Map" type="java.util.Map">
+        <result property="user_name" column="user_name"  jdbcType="VARCHAR"></result>
+        <result property="user_balance" column="user_balance"  jdbcType="VARCHAR"></result>
+    </resultMap>
+    <select id="userPoints" resultMap="date1Map">
+        select
+            user_name,
+            user_balance
+        from
+            user
+        where
+            user_role='user'
+          and user_balance >5
+    </select>
+
+
+
+</mapper>

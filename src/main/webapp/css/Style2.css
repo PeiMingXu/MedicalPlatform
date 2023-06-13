@@ -1,0 +1,189 @@
+.conner{font-size:13px;margin: 0 auto;width: 80%;text-align: center;}
+.logo{width:20%;height: 70px;font-size: 40px;color: rgb(59, 136, 236);}
+
+.tuijian{float: left;width: 100%;height: 70px;margin: 0 auto;text-align:center;margin-top: 20px;}
+.tuijiana{ float: left;width: 16%;height: 40px; line-height: 40px;margin: 0 auto;text-align:center;font-size:15px;margin: 0 auto;border:1px solid rgb(59, 136, 236);box-shadow: 5px 5px 3px #888888;}
+.k{float: left;width: 25px;height: 40px; line-height: 40px;margin-top: 29px;}
+.k1{float: left;width: 100px;height: 40px; line-height: 40px;margin-top: 29px;}
+.guonei{float: left;width: 100%;height: 200px;}
+.guoneib{float: left;font-size: 25px;width: 100%;color: rgb(59, 136, 236);text-align: left; margin-top: -10px;}
+.guoneiz{float: left;margin-top: 20px;width: 100%;}
+.guoneib a{color: rgb(59, 136, 236);}
+.guoneiz a img {float: left;width: 20%;}
+.guowai{float: left;width: 100%;height: 200px;margin-top: 40px;}
+.guowaib{float: left;font-size: 25px;width: 100%;color: rgb(59, 136, 236);text-align: left; margin-top: -10px;}
+.guowaiz{float: left;margin-top: 20px;width: 100%;}
+.guowaib a{color: rgb(59, 136, 236);}
+.guowaiz a img {float: left;width: 20%;}
+.mudijingxuan{float: left;width: 100%;height: 260px;}
+.mudijingxuanb{float: left;padding: 10px;margin-top: 20px;}
+.jiudian {float: left;width: 100%;height: 200px;margin-top: 40px;}
+.jiudianb{float: left;font-size: 25px;width: 100%;color: rgb(59, 136, 236);text-align: left; margin-top: -10px;}
+.jiudianz{float: left;margin-top: 20px;width: 100%;}
+.jiudianz a img {float: left;width: 20%;}
+.huodong{float: left;width: 100%;height: 200px;margin-top: 20px;height: 260px;}
+.huodongb{float: left;font-size: 25px;width: 35%;color: rgb(59, 136, 236);margin-left: 0px; margin-top: 20px;}
+.huodongz {float: left;padding-left: 10px;width: 100%;margin-top: 20px;}
+.huodong a img{float: left;width: 33.3%;}
+.guanggao{float: left;width: 100%;height: 200px;margin-bottom: -50px;}
+.banquan{float: left;width: 100%;height: 100px;border:1px solid #000;margin: 0 auto;}
+.foot {float: left;width: 100%;height: 28px;color: #666;margin: 0 auto;}
+.foot1 {float: left;width: 100%;height: 28px;color: #666;margin: 0 auto;}
+.foot2 {float: left;width: 100%;height: 28px;color: #666;margin: 0 auto;}
+.foot3 {float: left;width: 100%;height: 28px;color: #666;padding-left: 40px;margin-top: 10px;margin: 0 auto;}
+.foot3 li {float: left;width: 185px;line-height: 12px;list-style:none;font-size: 14px;color: #666;margin-left: 6%;}
+.foot4 {float: left;width: 100%;height: 28px;color: #666;margin: 0 auto;}
+.foot5 {float: left;width: 100%;height: 28px;color: #666;margin: 0 auto;}
+a {text-decoration:none;color: #000}
+a:hover{text-decoration:none;color: rgb(59, 136, 236);}
+img:hover {transform: scale(1.1,1.1);}
+img {transition: all 0.8s;overflow: hidden;}
+*{ padding:0; margin:0; list-style:none; border:0;}
+    .all{
+        width:1058px;
+        height:500px;
+        padding:7px;
+        border:1px solid rgb(170, 168, 168);
+        margin:0px auto;
+        position:relative;
+        box-shadow: 10px 10px 5px #888888;
+    }
+    .screen{
+        width:100%;
+        height:500px;
+        overflow:hidden;
+        position:relative;
+    }
+    .screen li { width:1058px; height:500px; overflow:hidden; float:left;}
+    .screen ul{ position:absolute; left:0; top:0px; width:5620px;}
+    .all ol{ position:absolute; right:10px; bottom:10px; line-height:20px; text-align:center;}
+    .all ol li{ float:left; width:20px; height:20px; background:#fff; border:1px solid #ccc; margin-left:10px; cursor:pointer;}
+    .all ol li.current{ background:yellow;}
+
+    #arr {display: none;}
+    #arr span{ width:40px; height:40px; position:absolute; left:5px; top:50%; margin-top:-20px; background:#000; cursor:pointer; line-height:40px; text-align:center; font-weight:bold; font-family:'黑体'; font-size:30px; color:#fff; opacity:0.3; border:1px solid #fff;}
+    #arr #right{right:5px; left:auto;}
+    *{
+margin: 0;
+padding: 0;
+}
+.box{
+width:100%;
+height: 200px;
+margin: 0px auto;
+
+}
+.box ul{
+width: 100%;
+height: 100%;
+list-style: none;
+background-color: black;
+overflow: hidden;
+
+}
+.box ul .imgBox{
+width: 360px;
+height: 200px;
+display: inline-block;
+float: left;
+box-sizing: border-box;
+overflow: hidden;
+opacity: 0.4;
+position: relative;
+}
+.box ul .active{
+width: 400px;
+height:  200px;
+opacity: 1;
+}
+.box ul .imgBox>a img{
+
+height: 100%;
+cursor: pointer;
+}
+
+
+.banner * {
+    margin: 0;
+    padding:0;
+}
+
+ul{
+    list-style: none;
+}
+
+.banner{
+    width: 100%;
+    height: 500px;
+    border: 2px solid #ccc;
+    margin: 50px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner .img{
+    width:100%;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.banner .img li{
+    float: left;
+}
+
+.num{
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 0;
+}
+
+.num li{
+    width: 10px;
+    height: 10px;
+    background:rgba(0,0,0,0.5);
+    border-radius: 100%;
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.btn{
+    display: none;
+}
+
+.btn span{
+    display: block;
+    width: 50px;
+    height: 100px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    font-size: 40px;
+    line-height: 100px;
+    text-align: center;
+    cursor:pointer;
+}
+
+.btn .prev{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -50px;
+}
+
+.btn .next{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -50px;
+}
+
+.num .active{
+    background-color: #fff;
+}
+.hide{
+    display: none;
+}

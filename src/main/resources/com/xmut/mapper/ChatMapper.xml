@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xmut.mapper.ChatMapper">
+    <insert id="insertChat" parameterType="com.xmut.pojo.Chat">
+        insert into chat(dc_id,u_id,status,chat_number,u_name,create_time)
+        values(#{dc_id},#{u_id},#{status},#{chat_number},#{u_name},#{create_time}
+              )
+    </insert>
+    <update id="updateChat" parameterType="com.xmut.pojo.Chat">
+        update chat set
+                        dc_id=#{dc_id},u_id=#{u_id},status=#{status},chat_number=#{chat_number},u_name=#{u_name}
+        where id=#{id}
+    </update>
+    <delete id="deleteChatById">
+        delete  from chat where id=#{id}
+    </delete>
+    <select id="findByDc" resultType="com.xmut.pojo.Chat">
+        select * from chat where dc_id=#{dc_id}
+    </select>
+    <select id="selectChatByDcOrUser" resultType="com.xmut.pojo.Chat">
+        select * from chat where dc_id=#{id} or u_id=#{id} order by create_time desc limit 1;
+    </select>
+    <update id="zaixian" parameterType="com.xmut.pojo.Chat">
+        update chat set
+            status='在线'
+        where u_id=#{u_id}
+    </update>
+    <select id="selectChatByNum" resultType="com.xmut.pojo.Chat">
+        select * from chat where chat_number=#{chat_number} order by create_time desc limit 1;
+    </select>
+    <select id="pageChat" resultType="com.xmut.pojo.Chat">
+        select * from chat
+        <if test="start != null and start >=0 and count != null">
+            limit #{start},#{count}
+        </if>
+    </select>
+    <select id="total" resultType="int">
+        select count(1) from chat
+    </select>
+    <select id="selectChatById" resultType="com.xmut.pojo.Chat">
+        select * from chat where
+            id=#{id}
+    </select>
+    <select id="getChatListByName" resultType="com.xmut.pojo.Chat"
+            parameterType="string">
+        select * from chat
+        where name like concat('%',#{u_name},'%');
+    </select>
+    <update id="xiaxianChat" parameterType="com.xmut.pojo.Chat">
+        update chat set
+            status='未在线'
+        where u_id=#{u_id}
+    </update>
+</mapper>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xmut.mapper.DcPrescriptMapper">
+
+    <!--注册用户-->
+    <insert id="addPrescript" parameterType="com.xmut.pojo.DcPrescript">
+        insert into prescript(p_user,p_symptom,p_drugs,dc_id,dr_id,dr_comment,p_status)
+        values (#{p_user},#{p_symptom},#{p_drugs},#{dc_id},#{dr_id},#{dr_comment},1)
+    </insert>
+
+    <select id="findByUid" resultType="com.xmut.pojo.DcPrescript">
+        select * from prescript where p_status =2 and p_user=#{p_user} or dc_id=#{p_user} order by p_id desc;
+    </select>
+
+
+
+</mapper>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xmut.mapper.DoctorMapper">
+    <select id="findByDep1" resultType="com.xmut.pojo.Doctor">
+
+        select user_id,user_name,user_phone,dc_title,dc_hospital,dc_department,dc_speciality,dc_evaluate,dc_image,user_balance,dc_isonline from user where user_role='doctor' and user_status=0 and  dc_department=#{dc_department}
+    </select>
+    <select id="findByDep2" resultType="com.xmut.pojo.Doctor">
+
+        select user_id,user_name,user_phone,dc_title,dc_hospital,dc_department,dc_speciality,dc_evaluate,dc_image,user_balance,dc_isonline from user where user_role='doctor' and user_status=0 and  dc_department=#{dc_department} order by dc_evaluate desc limit 3
+    </select>
+    <select id="findByName" resultType="com.xmut.pojo.Doctor">
+
+        select user_id,user_name,user_phone,dc_title,dc_hospital,dc_department,dc_speciality,dc_evaluate,dc_image,user_balance,dc_isonline from user where user_role='doctor' and user_status=0 and  user_name like concat('%',#{user_name},'%');
+    </select>
+    <select id="selectDoctorById" resultType="com.xmut.pojo.Doctor">
+        select user_id,user_name,user_phone,dc_title,dc_hospital,dc_department,dc_speciality,dc_evaluate,dc_image,user_balance,dc_isonline from user where user_id=#{user_id}
+    </select>
+    <update id="dianzan" parameterType="com.xmut.pojo.Doctor">
+        update user set
+            dc_evaluate=dc_evaluate+1
+        where user_id=#{user_id}
+    </update>
+    <update id="addJifen" parameterType="com.xmut.pojo.Doctor">
+        update user set
+            user_balance=user_balance+1
+        where user_id=#{user_id}
+    </update>
+    <update id="reduceJifen" parameterType="com.xmut.pojo.Doctor">
+        update user set
+            user_balance=user_balance-1
+        where user_id=#{user_id}
+    </update>
+    <select id="findByName1" resultType="com.xmut.pojo.Doctor">
+
+        select user_id,user_name,user_phone,dc_title,dc_hospital,dc_department,dc_speciality,dc_evaluate,dc_image,user_balance,dc_isonline from user where user_name =#{user_name};
+    </select>
+    <update id="shangxian" parameterType="com.xmut.pojo.Doctor">
+        update user set
+            dc_isonline='在线'
+        where user_id=#{user_id}
+    </update>
+    <update id="xiaxian" parameterType="com.xmut.pojo.Doctor">
+        update user set
+            dc_isonline='未在线'
+        where user_id=#{user_id}
+    </update>
+    <update id="updateDoctor" parameterType="com.xmut.pojo.Doctor">
+        update user set
+            dc_title=#{dc_title},dc_hospital=#{dc_hospital},dc_department=#{dc_department},dc_image=#{dc_image}
+        where user_id=#{user_id}
+    </update>
+</mapper>

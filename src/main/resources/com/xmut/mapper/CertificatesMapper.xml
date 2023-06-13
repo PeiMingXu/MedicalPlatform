@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xmut.mapper.CertificatesMapper">
+    <!--证书审核-->
+    <update id="borrowCertificates">
+        update dg_certificate
+        <set>
+            <if test="dg_name !=null">
+                dg_name=#{dg_name},
+            </if>
+            <if test="dg_grades !=null">
+                dg_grades=#{dg_grades},
+            </if>
+            <if test="dg_status !=null">
+                dg_status=#{dg_status},
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+
+    <!--证书驳回-->
+    <insert id="addCertificates">
+        insert into dg_certificate(dg_name,dg_grades,dg_status,dg_reason)
+        values (#{dg_name},#{dg_grades},#{dg_status},#{dg_reason})
+    </insert>
+
+</mapper>
